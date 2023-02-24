@@ -13,7 +13,6 @@ router.post("/addProduct", auth.verify, async (req, res) => {
     const service = await new Product(data).save();
     response.successResponse(res, 200, "Product Added Successfully", service);
   } catch (error) {
-    log.error(error);
     response.errorMsgResponse(res, 301, "Something went wrong");
   }
 });
@@ -86,7 +85,6 @@ router.put("/delete/:id", auth.verify, async (req, res) => {
     );
     response.successResponse(res, 200, "Product deleted successfully", {});
   } catch (error) {
-    log.error(error);
     response.errorMsgResponse(res, 301, "Something went wrong");
   }
 });
