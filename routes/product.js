@@ -73,7 +73,7 @@ router.put("/updateBy/:id", auth.verify, async (req, res) => {
   }
 });
 
-router.put("/deleteBy/:id", auth.verify, async (req, res) => {
+router.put("/delete/:id", auth.verify, async (req, res) => {
   try {
     let id = req.params.id;
 
